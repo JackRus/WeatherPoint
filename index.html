@@ -1,64 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta charset="UTF-8">
-	<title>Code Clinic--JavaScript</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/c3.min.css">
-	<link rel="stylesheet" href="css/style.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<title>Weather Point</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/c3.min.css">
+		<link rel="stylesheet" href="css/mystyle.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
 
-<body>
-	<header class="header">
-		<div class="branding container">
-			<div class="logo">
-				<img src="images/codeclinicicon.svg" alt="Weather Point Logo">
-			</div>
-			<div class="body">
-				<h1>Weather Point</h1>
-				<h2>Explore Your Weather</h2>
-			</div>
-		</div>
-	</header>
-	<div class="main">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<p></p>
+	<body>
+		<header class="header">
+			<div class="branding container">
+				<div class="logo">
+					<img src="images/codeclinicicon.svg" alt="Weather Point Logo">
+				</div>
+				<div class="body">
+					<h1>Weather Point</h1>
+					<h2>Explore Your Weather</h2>
 				</div>
 			</div>
-			
-			<div class="row chart">
+		</header>
+		<div class="main">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<p></p>
+					</div>
+				</div>
+				
+				<div class="row chart">
+					<div class="col-md-12">
+						<figure>
+							<div id="chart"></div>
+							<figcaption>Some info</figcaption>
+						</figure>
+					</div><!-- col 12-->
+				</div><!-- row -->
+			</div><!-- container -->
+		</div><!-- main -->
+		<footer class="footer container">
+			<div class="row">
 				<div class="col-md-12">
-					<figure>
-						<div id="chart"></div>
-						<figcaption>Some info</figcaption>
-					</figure>
-				</div><!-- col -->
-			</div><!-- row -->
-		</div><!-- container -->
-	</div>
-	<!-- main -->
-	<footer class="footer container">
-		<div class="row">
-			<div class="col-md-12">
-				<h2>About Weather Point</h2>
+					<h2>About Weather Point</h2>
+				</div>
 			</div>
-		</div>
-		<div class="row">
-			<p class="col-md-6"> Footer 1</p>
-			<p class="col-md-6">ooter 2</p>
-		</div>
-	</footer>
+			<div class="row">
+				<p class="col-md-6"> Footer 1</p>
+				<p class="col-md-6"> Footer 2</p>
+			</div>
+		</footer>
 
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+		
+		<!-- Chart Script -->
+		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+		<script src="js/c3.min.js"></script>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-	<script src="js/c3.min.js"></script>
-	<script src="js/myscript.js"></script>
-</body>
+		<!-- My Script -->
+		<script src="js/myscript.js"></script>
+
+	</body>
 
 </html>
