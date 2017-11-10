@@ -15,17 +15,43 @@
 
 	<body>
 		<header class="header">
-			<div class="branding container">
+			<div class="">
 				<div class="logo">
 					<img src="" alt="Weather Point Logo">
 				</div>
-				<div class="body">
-					<h1>Weather Point</h1>
-					<h2>Explore Your Weather</h2>
+				<div class="top">
+					<h1 class="nopad nomar">Weather Point</h1>
+					<br />
+					<h3 class="nopad nomar">Explore Your Weather by ZIP CODE</h3>
 				</div>
 			</div>
 		</header>
 		<div class="main">
+			<div class="form-group text-center">
+				<div class="inline">
+					<form class="row form-inline mAuto" name="zipform"> 
+						<label>ZIP CODE: &nbsp; &nbsp;
+							<input type="number" min="0" max="99999" name="zipcode"  class="form-control" style="width: 100px;">
+						</label>
+						<button type="button" id="show" class="btn mybtn bgBase tab-short">SHOW</div>
+					</form>
+					<div id="output"></div>
+				</div>
+			</div>
+
+			<div class="container">
+				<table class="eye table table-bordered table-hover f0-8">
+					<thead>
+						<tr>
+							<th>Plese, select the station</th>
+							<th>Data available for this time interval</th>
+						</tr>
+					</thead>
+					<tbody id="table-body">
+					</tbody>
+				</table>
+			</div>
+
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
@@ -37,23 +63,31 @@
 					<div class="col-md-12">
 						<figure>
 							<div id="chart"></div>
-							<figcaption>Some info</figcaption>
+							<figcaption></figcaption>
 						</figure>
 					</div><!-- col 12-->
 				</div><!-- row -->
+
+				<div class="row chart">
+					<div class="col-md-12">
+						<figure>
+							<div id="myC"></div>
+							<figcaption></figcaption>
+						</figure>
+					</div><!-- col 12-->
+				</div><!-- row -->
+
+
 			</div><!-- container -->
 		</div><!-- main -->
-		<footer class="footer container">
-			<div class="row">
-				<div class="col-md-12">
-					<h2>About Weather Point</h2>
+		<hr />
+        <footer>
+            <div class="text-center" style="margin: 30px 10px;">
+				<div class="inline">
+					<img src="images/logo-jack.png" alt="Jack Rus Logo" height="50px" width="auto"> &nbsp &copy; 2017 - Jack Rus. All rights reserved.
 				</div>
-			</div>
-			<div class="row">
-				<p class="col-md-6"> Footer 1</p>
-				<p class="col-md-6"> Footer 2</p>
-			</div>
-		</footer>
+	        </div>
+        </footer>
 
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js"
