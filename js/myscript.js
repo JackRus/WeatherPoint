@@ -146,7 +146,7 @@ $(function () {
 				sortorder: 'asc'
 			},
 			headers: {
-				'token': 'YmGfnzXmuLVrtJtGWICQQxfKMxbOdMAF'
+				'token': ''
 			},
 			dataType: 'json',
 			success: function (response) {
