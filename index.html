@@ -10,81 +10,91 @@
 		
 		<link rel="stylesheet" href="css/c3.min.css">
 		<link rel="stylesheet" href="css/mystyle.css">
+		<link rel="icon" href="favicon.svg" sizes="any" type="image/svg+xml">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBGm_4MLFt81qsiaulBrtBhhx8jQ2yhk6k'></script>
 	</head>
 
 	<body>
 		<header class="header">
-			<div class="">
-				<div class="logo">
-					<img src="" alt="Weather Point Logo">
-				</div>
-				<div class="top">
-					<h1 class="nopad nomar">Weather Point</h1>
-					<br />
-					<h3 class="nopad nomar">Explore Your Weather by ZIP CODE</h3>
-				</div>
+			<div class="top">
+				<h1 class="nopad nomar"> 
+					<img src="images/logo-weather-point-white.svg" height="80px" alt="Weather Point Logo">
+					Weather Point</h1>
+				<br />
+				<h3 class="nopad nomar">Explore Your Weather by ZIP CODE</h3>
 			</div>
+		
 		</header>
 		<div class="main">
-			<div class="form-group text-center">
+			<!-- 1. ZIP INSERT -->
+			<div id="myZip" class="form-group text-center">
 				<div class="inline">
 					<form class="row form-inline mAuto" name="zipform"> 
-						<label>ZIP CODE: &nbsp; &nbsp;
-							<input type="number" min="0" max="99999" name="zipcode"  class="form-control" style="width: 100px;">
+						<label class="bold">1. ZIP CODE: &nbsp; &nbsp;
+							<input type="number" min="1" max="99999" name="zipcode"  class="form-control" style="width: 100px;">
 						</label>
 						<button type="button" id="show" class="btn mybtn bgBase tab-short">SHOW</div>
 					</form>
-					<div id="output"></div>
 				</div>
-			</div>
-
-			<div class="container">
-				<table class="eye table table-bordered table-hover f0-8">
+			</div> <!--END OF ZIP INSERT -->
+	
+			<!-- TABLE SELECT STATION -->
+			<div id="myTable" class="container eye">
+				<div class="text-center m20">
+					Please select one of the stations, and click 'SELECT'
+				</div>
+				<table class="table table-bordered table-hover f0-8">
 					<thead>
 						<tr>
-							<th>Plese, select the station</th>
-							<th>Data available for this time interval</th>
+							<th>Station name</th>
+							<th>Available dates</th>
+							<th>Station ID</th>
+							<th>Location</th>
+							<th>Action</th>
 						</tr>
 					</thead>
 					<tbody id="table-body">
 					</tbody>
 				</table>
-			</div>
+			</div><!-- END OF TABLE -->
 
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<p></p>
-					</div>
-				</div>
+			<!-- MAP -->
+			<div id="myMap" class="m20-0 eye">	
+				<h4>Station's location on the map</h4>
+				<div id="map"></div>
+			</div><!-- END OF MAP -->
+
+			<!-- STATION SELECTED -->
+			<div id="myStation" class="container text-center">	
+			</div> <!-- END STATION SELECTED -->
 				
-				<div class="row chart">
-					<div class="col-md-12">
-						<figure>
-							<div id="chart"></div>
-							<figcaption></figcaption>
-						</figure>
-					</div><!-- col 12-->
-				</div><!-- row -->
+			<div id="chartAvg" class="row chart m0-30 eye">
+				<div class="col-md-12">
+					<figure>
+						<div id="chart"></div>
+						<figcaption></figcaption>
+					</figure>
+				</div><!-- col 12-->
+			</div><!-- row -->
 
-				<div class="row chart">
-					<div class="col-md-12">
-						<figure>
-							<div id="myC"></div>
-							<figcaption></figcaption>
-						</figure>
-					</div><!-- col 12-->
-				</div><!-- row -->
+			<div id="chartMin" class="row chart m20-0">
+				<div class="col-md-12">
+					<figure>
+						<div id="myC"></div>
+						<figcaption></figcaption>
+					</figure>
+				</div><!-- col 12-->
+			</div><!-- row -->
 
-
-			</div><!-- container -->
-		</div><!-- main -->
+		</div><!-- MAIN -->
+		
 		<hr />
         <footer>
             <div class="text-center" style="margin: 30px 10px;">
 				<div class="inline">
-					<img src="images/logo-jack.png" alt="Jack Rus Logo" height="50px" width="auto"> &nbsp &copy; 2017 - Jack Rus. All rights reserved.
+					<img src="images/logo-jack-svg.svg" alt="Jack Rus Logo" height="40px" width="auto"> &nbsp &copy; 2017 - Jack Rus. All rights reserved.
 				</div>
 	        </div>
         </footer>

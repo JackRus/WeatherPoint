@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>EndPoint Builder</title>
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+		
+		<link rel="stylesheet" href="css/c3.min.css">
+		<link rel="stylesheet" href="css/mystyle.css">
+		<link rel="icon" href="favicon.svg" sizes="any" type="image/svg+xml">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBGm_4MLFt81qsiaulBrtBhhx8jQ2yhk6k'></script>
+	</head>
+
+	<body>
+		<header class="header">
+			<div class="top">
+				<h1 class="nopad nomar"> 
+					<!-- <img src="images/logo-weather-point-white.svg" height="80px" alt="Weather Point Logo"> -->
+					EndPoint Builder</h1>
+			</div>
+		</header>
+
+		<div class="m0-30">
+			
+			<!-- ENDPOINT -->
+			<div class="m20-0" id='display'>http://localhost:5000/api/</div>
+			
+			<!-- constructor -->
+			<div class="form-inline">
+				<!-- DATA TYPE SELECTION -->
+				<span>DATA TYPE:</span>
+				<select id='type' class='form-control tab-long'>
+					<option default value=''>Select &#x25BC;</option>
+					<option value='data'>Actual Data</option>
+					<option value='datasets'>Datasets</option>
+					<option value='datacategories'>Data Categories</option>
+					<option value='datatypes'>Data Types</option>
+					<option value='stations'>Stations</option>
+					<option value='locations'>Locations</option>
+					<option value='locationcategories'>Location Categories</option>
+				</select>
+			</div>
+
+
+			<div class="eye datatype" id="stations">	
+	
+				<!-- DATES FROM -->
+				<label class="bold m20 form-inline">1. START DATE:
+					
+					<input type="date" required data-name="from" class="form-control tab-long" style="width: auto;">
+					<button type="button" class="stations-btn btn mybtn bgBase tab-short">ADD</button>
+					
+				</label><!-- END OF DATES -->
+
+				<!-- DATES FROM -->
+				<label class="bold m20 form-inline">2. END DATE:
+
+					<input type="date" required data-name="to" class="form-control tab-long">
+					<button type="button" class="stations-btn btn mybtn bgBase tab-short">ADD</button>
+
+				</label><!-- END OF DATES -->
+				
+				<!-- SORT FIELD -->
+				<label class="bold m20 form-inline">3. SORT BY:
+			
+					<select data-name='sortby' class='form-control tab-long'>
+						<option default value=''>Select</option>
+						<option value='id'>ID</option>
+						<option value='mindate'>Min Date</option>
+						<option value='maxdate'>Max Date</option>
+						<option value='datacoverage'>Data Coverage</option>
+						<option value='name'>Name</option>
+					</select>
+
+					<button type="button" class="stations-btn btn mybtn bgBase tab-short">ADD</button>
+
+				</label><!-- END OF DATES -->
+
+				<!-- ORDER -->
+				<label class="bold m20 form-inline">4. ORDER (default: asc):
+						
+					<select data-name='order' class='form-control tab-long'>
+						<option default value=''>Select</option>
+						<option value='asc'>Ascending</option>
+						<option value='desc'>Descending</option>
+					</select>
+
+					<button type="button" class="stations-btn btn mybtn bgBase tab-short">ADD</button>
+
+				</label><!-- END OF DATES -->
+
+				<!-- ORDER -->
+				<label class="bold m20 form-inline">5. DATASET ID:
+						
+					<select data-name='datasetid' class='form-control tab-long'>
+						<option default value=''>Select</option>
+						<option value='GHCND'>Daily Summaries</option>
+						<option value='GSOM'>Global Summary of the Month</option>
+						<option value='GSOY'>Global Summary of the Year</option>
+						<option value='NEXRAD2'>Weather Radar (Level II)</option>
+						<option value='NEXRAD3'>Weather Radar (Level III)</option>
+						<option value='NORMAL_ANN'>Normals Annual/Seasonal</option>
+						<option value='NORMAL_DLY'>Normals Daily</option>
+						<option value='NORMAL_HLY'>Normals Hourly</option>
+						<option value='NORMAL_MLY'>Normals Monthly</option>
+						<option value='PRECIP_15'>Precipitation 15 Minute</option>
+						<option value='PRECIP_HLY'>Precipitation Hourly</option>
+					</select>
+
+					<button type="button" class="stations-btn btn mybtn bgBase tab-short">ADD</button>
+
+				</label><!-- END OF DATES -->
+
+			</div>
+	<!-- end of constructor -->
+		</div><!-- MAIN -->
+		
+		<hr />
+        <footer>
+            <div class="text-center" style="margin: 30px 10px;">
+				<div class="inline">
+					<img src="images/logo-jack-svg.svg" alt="Jack Rus Logo" height="40px" width="auto"> &nbsp &copy; 2017 - Jack Rus. All rights reserved.
+				</div>
+	        </div>
+        </footer>
+
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+		crossorigin="anonymous"></script>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+		
+		<!-- My Script -->
+		<script src="js/builder.js"></script>
+	</body>
+
+</html>
