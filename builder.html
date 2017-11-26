@@ -20,8 +20,8 @@
 		<header class="header">
 			<div class="top">
 				<h1 class="nopad nomar"> 
-					<!-- <img src="images/logo-weather-point-white.svg" height="80px" alt="Weather Point Logo"> -->
 					EndPoint Builder</h1>
+				<h4>for NOAA's National Centers for Environmental Information's (NCEI) Historical Data</h4>
 			</div>
 		</header>
 
@@ -30,10 +30,10 @@
 			<!-- ENDPOINT -->
 			<div class="m20-0" id='display'>http://localhost:5000/api/</div>
 			
-			<!-- constructor -->
+			<!-- DATA TYPE SELECTOR -->
 			<div class="form-inline">
 				<!-- DATA TYPE SELECTION -->
-				<span>DATA TYPE:</span>
+				<span>Please, select the category:</span>
 				<select id='type' class='form-control tab-long'>
 					<option default value=''>Select &#x25BC;</option>
 					<option value='data'>Actual Data</option>
@@ -46,79 +46,14 @@
 				</select>
 			</div>
 
-
-			<div class="eye datatype" id="stations">	
-	
-				<!-- DATES FROM -->
-				<label class="bold m20 form-inline">1. START DATE:
-					
-					<input type="date" required data-name="from" class="form-control tab-long" style="width: auto;">
-					<button type="button" class="stations-btn btn mybtn bgBase tab-short">ADD</button>
-					
-				</label><!-- END OF DATES -->
-
-				<!-- DATES FROM -->
-				<label class="bold m20 form-inline">2. END DATE:
-
-					<input type="date" required data-name="to" class="form-control tab-long">
-					<button type="button" class="stations-btn btn mybtn bgBase tab-short">ADD</button>
-
-				</label><!-- END OF DATES -->
-				
-				<!-- SORT FIELD -->
-				<label class="bold m20 form-inline">3. SORT BY:
+		</div>
+		<div id="main" class="m0-30">
 			
-					<select data-name='sortby' class='form-control tab-long'>
-						<option default value=''>Select</option>
-						<option value='id'>ID</option>
-						<option value='mindate'>Min Date</option>
-						<option value='maxdate'>Max Date</option>
-						<option value='datacoverage'>Data Coverage</option>
-						<option value='name'>Name</option>
-					</select>
+			<!--  -->
+			<!-- ALL BLOCKS GO HERE -->
+			<!--  -->
 
-					<button type="button" class="stations-btn btn mybtn bgBase tab-short">ADD</button>
-
-				</label><!-- END OF DATES -->
-
-				<!-- ORDER -->
-				<label class="bold m20 form-inline">4. ORDER (default: asc):
-						
-					<select data-name='order' class='form-control tab-long'>
-						<option default value=''>Select</option>
-						<option value='asc'>Ascending</option>
-						<option value='desc'>Descending</option>
-					</select>
-
-					<button type="button" class="stations-btn btn mybtn bgBase tab-short">ADD</button>
-
-				</label><!-- END OF DATES -->
-
-				<!-- ORDER -->
-				<label class="bold m20 form-inline">5. DATASET ID:
-						
-					<select data-name='datasetid' class='form-control tab-long'>
-						<option default value=''>Select</option>
-						<option value='GHCND'>Daily Summaries</option>
-						<option value='GSOM'>Global Summary of the Month</option>
-						<option value='GSOY'>Global Summary of the Year</option>
-						<option value='NEXRAD2'>Weather Radar (Level II)</option>
-						<option value='NEXRAD3'>Weather Radar (Level III)</option>
-						<option value='NORMAL_ANN'>Normals Annual/Seasonal</option>
-						<option value='NORMAL_DLY'>Normals Daily</option>
-						<option value='NORMAL_HLY'>Normals Hourly</option>
-						<option value='NORMAL_MLY'>Normals Monthly</option>
-						<option value='PRECIP_15'>Precipitation 15 Minute</option>
-						<option value='PRECIP_HLY'>Precipitation Hourly</option>
-					</select>
-
-					<button type="button" class="stations-btn btn mybtn bgBase tab-short">ADD</button>
-
-				</label><!-- END OF DATES -->
-
-			</div>
-	<!-- end of constructor -->
-		</div><!-- MAIN -->
+		</div><!-- END OF MAIN -->
 		
 		<hr />
         <footer>
@@ -134,6 +69,7 @@
 		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 		crossorigin="anonymous"></script>
 		
+		<!-- BOOTSTRAP -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 		
