@@ -22,6 +22,7 @@ BUTTONS
 */
 
 .mybtn {
+    font-weight: 300;
     padding: .2rem .7rem;
     border-radius: 0px;
     color: #fff;

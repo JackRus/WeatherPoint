@@ -102,6 +102,54 @@ let storage = {
 	}
 };
 
+let fieldsList = {
+	stations: {
+		"elevation": 1,
+		"mindate": 2,
+		"maxdate": 3,
+		"latitude": 4,
+		"name": 5,
+		"datacoverage": 6,
+		"id": 7,
+		"elevationUnit": 8,
+		"longitude": 9
+	},
+	datasets: {
+		"uid": 1,
+		"mindate": 2,
+		"maxdate": 3,
+		"name": 4,
+		"datacoverage": 5,
+		"id": 6
+	},
+	datatypes: {
+		"mindate": 1,
+		"maxdate": 2,
+		"name": 3,
+		"datacoverage": 4,
+		"id": 5
+	},
+	locationcategories: {
+		"name": 1,
+		"id": 2
+	},
+	locations: {
+		"mindate": 1,
+		"maxdate": 2,
+		"name": 3,
+		"datacoverage": 4,
+		"id": 5
+	},
+	data: {
+		"date": 1,
+		"datatype": 2,
+		"station": 3,
+		"attributes": 4,
+		"value": 5
+	}
+
+};
+
 // COLLECTIONS
 let datasetid = [
 	{
@@ -511,56 +559,61 @@ function selectBuild (name, collection) {
 }
 
 function buildForm () {
-	
-	blockMetaData(0);
+
+	let count = 1;
+
 	if (type === 'data') {
-		blockFromDate(1, '&nbsp;(required)');
-		blockToDate(2, '&nbsp;(required)');
+		blockFromDate(count++, '&nbsp;(required)');
+		blockToDate(count++, '&nbsp;(required)');
 	}
 	else {
-		blockFromDate(1);
-		blockToDate(2);
+		blockFromDate(count++);
+		blockToDate(count++);
 	}
-	blockSortField(3);
-	blockSortOrder(4);
-	blockLimit(5);
-	blockOffset(6);
+	blockSortField(count++);
+	blockSortOrder(count++);
+	blockLimit(count++);
+	blockOffset(count++);
 	
 	switch (type) {
 		case 'stations':
-			blockDatatypeId(7);
-			blockDataCategoryId(8);
+			blockDatatypeId(count++);
+			blockDataCategoryId(count++);
+			blockLocationId(count++);
 			break;
 		case 'datasets', 'datacategories':
-			blockDatatypeId(7);
-			blockLocationId(8);
-			blockStationId(9);
+			blockDatatypeId(count++);
+			blockLocationId(count++);
+			blockStationId(count++);
 			break;
 		case 'locations':
-			blockDataCategoryId(7);
-			blockLocationCategoryId(8);
-			blockDatasetId(9);
+			blockDataCategoryId(count++);
+			blockLocationCategoryId(count++);
+			blockDatasetId(count++);
 			break;
 		case 'data':
-			blockUnits(7);
-			blockDatasetId(8, '&nbsp;(required)');
-			blockDatatypeId(9);
-			blockLocationId(10);
-			blockStationId(11);
-			blockGroupBy(12);
+			blockUnits(count++);
+			blockDatasetId(count++, '&nbsp;(required)');
+			blockDatatypeId(count++);
+			blockLocationId(count++);
+			blockStationId(count++);
+			blockGroupBy(count++);
+			blockMetaData(count++);
 			break;
 		case 'locationcategories':
-			blockDatasetId(7);
+			blockDatasetId(count++);
 			break;
 		case 'datatypes':
-			blockDatasetId(7);
-			blockLocationId(8);
-			blockStationId(9);
-			blockDataCategoryId(10);
+			blockDatasetId(count++);
+			blockLocationId(count++);
+			blockStationId(count++);
+			blockDataCategoryId(count++);
 			break;
 		default:
 			break;
 	}
+
+	blockFields(count++);
 }
 
 function blockFromDate(number, required = '') {
@@ -746,4 +799,44 @@ function blockGroupBy(number) {
 			"<button type='button' class='block-btn btn mybtn bgBase tab-short'>ADD</button>" +
 		"</label><!-- END GROUP BY -->"
 	);
+
+	$('#field-btn').click( function () {
+
+	});
 }
+
+function blockFields (number) {
+	container.append(
+		"<!-- FIELDS -->" +
+		"<label class='bold m20 form-inline'>"+ number +". EXCLUDE FIELDS:" +
+		"<input type='text' id='fieldstring' data-name='EXCLUDE' class='eye'>" + 
+		"<button type='button' data-name='EXCLUDE' style='margin-left: 50px;' class='block-btn btn mybtn bgBase'>Update</button></label>" +
+		"<div style='margin-left: 50px;' id='fieldslist' data-name='EXCLUDE'>" +
+
+		"</div><div class='eye'></div>" +
+		"<!-- END FIELDS -->"	
+	);
+
+	buildFields();
+}
+
+function buildFields () {
+	$.each( fieldsList[type], function (key, val) {
+		$('#fieldslist').append(
+			"<input class='fieldselect' type='checkbox' value=" + val + "> " + key + "<br>"
+		);
+	});
+
+	$('.fieldselect').change( function () {
+		let appendix = '-' + $(this).val();
+		if ($(this).is(':checked')){
+			$('#fieldstring').val($('#fieldstring').val() + appendix);
+		}
+		else {
+			let newVal = $('#fieldstring').val().replace(appendix, '');
+			$('#fieldstring').val(newVal);
+		}
+	});
+}
+
+
