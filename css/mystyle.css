@@ -131,6 +131,7 @@ SPACING
 .m20-0 {margin: 20px 0px;}
 .tab-short {margin-left: 1em;}
 .tab-long {margin-left: 2em;}
+.m30-20-tb {margin-top: 50px; margin-bottom: 20px;}
 
 /* center-center */
 .c-c {
@@ -159,8 +160,9 @@ SPACING
 	text-align: center;
 	margin: 0px 0px 30px 0px;
 	padding: 50px;
-	width: 100%;
-	background: #6495ed;
+    width: 100%;
+    /* background-image: url('../images/bk-flowers.svg'); */
+    background: #6495ed;
 	color: #FFF;
 	font-weight: 300;
 	vertical-align: middle;
@@ -225,4 +227,14 @@ select.form-control:not([size]):not([multiple]) {
 
 .pointer:hover {
     color:  #6495ed!important;
+}
+
+/* HIDE MAP DIV */
+#hidemap {
+    background-color: #ff0000;
+    margin-left: 20px;
+    color: #ffffff;
+    font-size: 0.6em;
+    padding: 2px 4px;
+    cursor: pointer;
 }
